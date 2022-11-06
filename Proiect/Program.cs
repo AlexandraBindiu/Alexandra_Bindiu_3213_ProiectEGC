@@ -9,17 +9,20 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Proiect
-{
+{/*
     class Program : GameWindow
-    {
+    { 
         KeyboardState lastKeyPress;
+        private Randomizer rando;
+        private Obiect obj;
+        private Color color;
         private float q;
         private float f;
         public Program() : base(900, 700)
         {
             VSync = VSyncMode.On;
         }
-        protected override void OnLoad(EventArgs e)
+      protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
 
@@ -40,6 +43,13 @@ namespace Proiect
             Matrix4 perspective = Matrix4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, (float)aspect_ratio, 5, 64);
             GL.MatrixMode(MatrixMode.Projection);
             GL.LoadMatrix(ref perspective);
+
+            // setare ochi
+            Matrix4 ochi = Matrix4.LookAt(15, 15, 30, 0, 0, 0, 0, 1, 0);
+
+            GL.MatrixMode(MatrixMode.Modelview);
+            GL.LoadMatrix(ref ochi);
+
 
         }
         private void DrawObject()
@@ -80,6 +90,9 @@ namespace Proiect
             GL.End();
         }
 
+       
+
+
 
         protected override void OnRenderFrame(FrameEventArgs e)
         {
@@ -94,7 +107,7 @@ namespace Proiect
 
 
             SwapBuffers();
-        }
+        }      
         protected override void OnUpdateFrame(FrameEventArgs e)
         {
             base.OnUpdateFrame(e);
@@ -121,6 +134,7 @@ namespace Proiect
             {
                 GL.Viewport(x_click, -y_click, Width, Height);
             }
+            
 
             //miscarea obiectului folosind tastele up si down
             if (keyboard[Key.Down])
@@ -131,22 +145,40 @@ namespace Proiect
             {
                 f += 0.05f;
             }
+            if (keyboard[Key.C] )
+            {
+                DiscoMode(rando);
+            }
+
 
             lastKeyPress = keyboard;
+        }
+
+        public void DiscoMode(Randomizer _r)
+        {
+            color = _r.RandomColor();
         }
 
         [STAThread]
         static void Main(string[] args)
         {
             Console.WriteLine("\n------------------MENU-------------------");
-            Console.WriteLine("\n Miscarea obiectului se face folosind mouse-ul sau tastele UP si DOWN "); 
+            Console.WriteLine("\n Miscarea obiectului se face folosind mouse-ul sau tastele UP si DOWN ");
             using (Program example = new Program())
             {
 
                 example.Run(30.0, 0.0);
             }
 
-            
+
+        }
+    }*/
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Window3D wnd = new Window3D();
+            wnd.Run(30.0, 0.0);
         }
     }
 }
