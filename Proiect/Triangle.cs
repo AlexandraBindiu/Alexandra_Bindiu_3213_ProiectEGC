@@ -58,7 +58,7 @@ namespace Proiect
                 GL.Vertex3(5.0f + q, -5.0f + f, -5.0f);
                 GL.Vertex3(-5.0f + q, -5.0f + f, -5.0f);
 
-                GL.Color3(Color.DarkSeaGreen);
+                GL.Color3(color);
                 GL.Vertex3(-5.0f + q, -5.0f + f, -5.0f);
                 GL.Vertex3(-0.05f + q, 5.05f + f, 0.0f);
                 GL.Vertex3(5.0f + q, -5.0f + f, -5.0f);
@@ -68,7 +68,7 @@ namespace Proiect
                 GL.Vertex3(-0.05f + q, 5.05f + f, 0.0f);
                 GL.Vertex3(5.0f + q, -5.0f + f, 5.0f);
 
-                GL.Color3(Color.DarkSeaGreen);
+                GL.Color3(color);
                 GL.Vertex3(5.0f + q, -5.0f + f, 5.0f);
                 GL.Vertex3(-0.05f + q, 5.05f + f, 0.0f);
                 GL.Vertex3(-5.0f + q, -5.0f + f, 5.0f);
